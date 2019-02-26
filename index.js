@@ -65,15 +65,25 @@ var app7 = new Vue({
 var vm = new Vue({
   el: '#demo',
   data: {
-    firstName: 'Foo',
-    lastName: 'Bar'
+    firstName: 'Chika',
+    lastName: 'Watanabe'
+  },
+  methods: {
+    greeting2: function() {
+      const date = new Date()
+      return `今は${date}です`
+    },
   },
   computed: {
+    greeting1: function() {
+      const date = new Date()
+      return `今は${date}です`
+    },
     fullName: {
-      get: function () {
+      get: function () { //算出プロパティ
         return this.firstName + ' ' + this.lastName
       },
-      set: function(newValue){
+      set: function(newValue){ //算出プロパティ
         var names = newValue.spilit(' ')
         this.firstName = names[0]
         this.lastName = names[names.length - 1]
