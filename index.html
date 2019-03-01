@@ -60,6 +60,17 @@
 
     <button v-bind:disabled="isButtonDisabled">button</button>
 
+
+    <hr>
+    <div
+      class="static"
+      v-bind:class="{ active: isActive, 'text-danger': hasError }"
+    >aaa</div>
+
+    <div
+      class="hoge"
+      v-bind:class="classObject">aaaaa</div>
+
    <script src="index.js"></script>
   </body>
 </html>

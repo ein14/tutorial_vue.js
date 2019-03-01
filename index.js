@@ -63,6 +63,30 @@ var app7 = new Vue({
 })
 
 var vm = new Vue({
+  el: '.static',
+  data: {
+    isActive: false,
+    hasError: true
+  },
+})
+
+var vm = new Vue({
+  el: '.hoge',
+  data:{
+    isActive: true,
+    error: null,
+  },
+  computed: {
+    classObject:function(){
+      return {
+        active: this.isActive && !this.error,
+        'text-danger':this.error && this.error.type === 'fatal'
+      }
+    }
+  }
+})
+
+var vm = new Vue({
   el: '#demo',
   data: {
     firstName: 'Chika',
