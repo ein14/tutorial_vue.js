@@ -4,18 +4,21 @@ var app = new Vue({
     message: 'Hello Vue!'
   }
 })
+
 var app2 = new Vue({
   el: '#app-2',
   data: {
     message: 'You loaded this page on ' + new Date().toLocaleString() //この要素の title 属性を Vue インスタンスの message プロパティによって更新して保存する
   }
 })
+
 var app3 = new Vue({
   el: '#app-3',
   data: {
     seen: true //console上で　app3.seen = false　を打ち込むと消える（要素の有無の切り替え）
   }
 })
+
 var app4 = new Vue({
   el: '#app-4',
   data: {
@@ -39,6 +42,8 @@ var app5 = new Vue({
     }
   }
 })
+
+
 var app6 = new Vue({
   el: '#app-6',
   data: {
@@ -112,6 +117,18 @@ var vm = new Vue({
         this.firstName = names[0]
         this.lastName = names[names.length - 1]
       }
+     }
     }
-  }
+  })
+
+  Vue.component('button-counter', {
+  data: function () {
+    return {
+      count: 0
+    }
+  },
+  template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
 })
+
+var app9 = new Vue ({
+  el: '#conponents-demo' });
